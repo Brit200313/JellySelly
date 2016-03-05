@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: jelly_selly_dev
+
+test:
+  <<: *default
+  database: jelly_selly_test
+
+staging:
+  <<: *default
+  database: jelly_selly_staging
+
+production:
+  <<: *default
+  database: hird_prod
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
