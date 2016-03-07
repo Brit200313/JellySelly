@@ -1,4 +1,4 @@
 %h2 Your basket
 = render 'items', :order => current_order
 
-%p= link_to 'Empty basket', basket_path, :method => :delete
+%p= button_to 'Empty basket', basket_path, :method => :delete, :class => "btn btn-secondary"

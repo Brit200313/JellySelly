@@ -1,9 +1,9 @@
-%h2 Products
+%h2 Shop by Category
 - @products.each do |category, products|
   %h3= category.name
-  %ul
+  %ul{class: "list-group"}
     - products.each do |product|
-      %li
+      %li{class: "list-group-item"}
         %h4= link_to product.name, product_path(product.permalink)
         %p= product.short_description
         %p

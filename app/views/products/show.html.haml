@@ -4,8 +4,8 @@
 %p= @product.short_description
 %p
   %b= number_to_currency @product.price
-  = link_to "Add to basket", product_path(@product.permalink), :method => :post
+  = button_to "Add to basket", product_path(@product.permalink), :method => :post, :class => "btn btn-primary"
 %hr
   = simple_format @product.description
   %hr
-    %p= link_to "Back to list", root_path
+    %p= button_to "Back to list", root_path, method: :get, :class => "btn btn-secondary"
