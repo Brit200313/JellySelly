@@ -1,11 +1,12 @@
-%h2= @product.name
-- if @product.default_image
-  = image_tag @product.default_image.path, :width => '200px', :style => "float:right"
-%p= @product.short_description
-%p
-  %b= number_to_currency @product.price
-  = button_to "Add to basket", product_path(@product.permalink), :method => :post, :class => "btn btn-primary"
-%hr
-  = simple_format @product.description
+.container
+  %h2= @product.name
+  - if @product.default_image
+    = image_tag @product.default_image.path, :width => '200px', :style => "float:right"
+  %p= @product.short_description
+  %p
+    %b= number_to_currency @product.price
+    = button_to "Add to basket", product_path(@product.permalink), :method => :post, :class => "btn btn-primary"
   %hr
-    %p= button_to "Back to list", root_path, method: :get, :class => "btn btn-secondary"
+    = simple_format @product.description
+    %hr
+      %p= button_to "Back to list", products_path, method: :get, :class => "btn btn-secondary"
