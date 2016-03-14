@@ -1,4 +1,8 @@
 .container
+  %br
+  %br
+  %br
+  = render "layouts/footer"
   %h2 Shop by Category
   - @products.each do |category, products|
     %h3= category.name

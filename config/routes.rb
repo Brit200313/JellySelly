@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "products", to: "products#index", as: "products"
 
   root to: "static_pages#home"
-  get "about", to: "static_pages#home", as: "about"
+  get "about", to: "static_pages#about", as: "about"
 
   get "basket", to: "orders#show"
   delete "basket", to: "orders#destroy"

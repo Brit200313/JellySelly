@@ -6,12 +6,20 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  %body
-    - if current_order
-      %p{:style => "border:1px solid black;padding:10px;"}
-        You have #{pluralize current_order.total_items, 'item'} in your basket which cost
-        \#{number_to_currency current_order.total_before_tax}.
-        = link_to "View basket", basket_path
-        = link_to "Checkout", checkout_path
-        = flash[:notice]
+  %header
+    / Navigation
+    %nav.navbar.navbar-default.navbar-fixed-top
+      .container
+        %a.navbar-brand{:href => "/"} JellySelly
+        / Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          %ul.nav.navbar-nav.navbar-right
+            %li.page-scroll
+              %a{:href => "/shoppe/login"} JellySelly Admin
+            %li.page-scroll
+              %a{:href => "/products"} Products
+            %li.page-scroll
+              %a{:href => "/basket"} Basket
+        / /.navbar-collapse
+      / /.container-fluid
     = yield

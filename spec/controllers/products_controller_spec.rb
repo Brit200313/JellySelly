@@ -19,15 +19,15 @@ RSpec.describe ProductsController, type: :controller do
     end
   end
 
-  describe "buying a product" do
-    it "adds a product to cart" do
+  describe "paying for a product" do
+    it "lets you buy a product" do
       get :buy, permalink: @product.permalink
       expect(response).to redirect_to product_path(@product.permalink)
     end
   end
 
-  describe "indexing products" do
-    it "shows an index of products" do
+  describe "order confirmation" do
+    it "renders the order confirmation" do
       get :index
       response.should be_success
     end
